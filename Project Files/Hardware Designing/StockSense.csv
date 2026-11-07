@@ -1,0 +1,26 @@
+Reference,Qty,Value,DNP,Exclude from BOM,Exclude from Board,Exclude from Simulation,Exclude from Position Files,Footprint,Datasheet
+BZ1,1,Buzzer,,,,,${EXCLUDE_FROM_POS_FILES},Buzzer_Beeper:Buzzer_12x9.5RM7.6,
+"C1,C4,C6,C9,C10,C11,C12,C_SENSE1",8,0.1u,,,,,${EXCLUDE_FROM_POS_FILES},Capacitor_SMD:C_0805_2012Metric,
+C3,1,4.7u,,,,,${EXCLUDE_FROM_POS_FILES},Capacitor_SMD:C_0805_2012Metric,
+C5,1,100u,,,,,${EXCLUDE_FROM_POS_FILES},Capacitor_THT:CP_Radial_D6.3mm_P2.50mm,
+D5,1,D_Zener,,,,,${EXCLUDE_FROM_POS_FILES},Package_TO_SOT_SMD:SOT-23,
+D6,1,SMAJ15A,,,,,${EXCLUDE_FROM_POS_FILES},Diode_SMD:D_SMA,https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet
+D7,1,Green_LED,,,,,${EXCLUDE_FROM_POS_FILES},LED_SMD:LED_0805_2012Metric,
+D8,1,Red_LED,,,,,${EXCLUDE_FROM_POS_FILES},LED_SMD:LED_0805_2012Metric,
+D9,1,D_Small,,,,,${EXCLUDE_FROM_POS_FILES},Diode_SMD:D_SMA,
+"D_BAT1,D_MAINS1",2,SS34,,,,,${EXCLUDE_FROM_POS_FILES},Diode_SMD:D_SMA,https://www.vishay.com/docs/88751/ss32.pdf
+J1,1,Conn_01x04,,,,,${EXCLUDE_FROM_POS_FILES},StockSense_Footprints:Mini360_MP2307_Module,
+J3,1,Barrel_Jack_Switch_Pin3Ring,,,,,${EXCLUDE_FROM_POS_FILES},Connector_BarrelJack:BarrelJack_Horizontal,
+J4,1,Screw_Terminal_01x02,,,,,${EXCLUDE_FROM_POS_FILES},"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+"J5,J9,J10,J11",4,Conn_01x04,,,,,${EXCLUDE_FROM_POS_FILES},Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,
+J7,1,Conn_01x06,,,,,${EXCLUDE_FROM_POS_FILES},Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,
+J8,1,Conn_01x04_Socket,,,,,${EXCLUDE_FROM_POS_FILES},Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical,
+J12,1,Conn_01x08,,,,,${EXCLUDE_FROM_POS_FILES},Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical,
+Q2,1,AO3401A,,,,,${EXCLUDE_FROM_POS_FILES},Package_TO_SOT_SMD:SOT-23,http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf
+Q3,1,BC847,,,,,${EXCLUDE_FROM_POS_FILES},Package_TO_SOT_SMD:SOT-23,http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657
+R1,1,1k,,,,,${EXCLUDE_FROM_POS_FILES},Resistor_SMD:R_0805_2012Metric,
+"R2,R3,R10,R_DIV2",4,10k,,,,,${EXCLUDE_FROM_POS_FILES},Resistor_SMD:R_0805_2012Metric,
+"R4,R5",2,4.7k,,,,,${EXCLUDE_FROM_POS_FILES},Resistor_SMD:R_0805_2012Metric,
+R_DIV1,1,30k,,,,,${EXCLUDE_FROM_POS_FILES},Resistor_SMD:R_0805_2012Metric,
+SW1,1,SW_Omron_B3FS,,,,,${EXCLUDE_FROM_POS_FILES},Button_Switch_THT:SW_PUSH_6mm_H4.3mm,https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf
+U1,1,ESP32-DevKitC,,,,,${EXCLUDE_FROM_POS_FILES},PCM_Espressif:ESP32-DevKitC,https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/hw-reference/esp32/get-started-devkitc.html
