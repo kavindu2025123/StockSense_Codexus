@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: stocksense-broker
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    container_name: stocksense-db
+    environment:
+      POSTGRES_DB: stocksense_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secretpassword
+    ports:
+      - "5432:5432"
+
+  fastapi-backend:
+    build: ./backend
+    container_name: stocksense-api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mosquitto
+      - timescaledb

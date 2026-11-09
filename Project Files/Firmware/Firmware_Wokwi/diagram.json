@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "StockSense Developer",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": -120,
+      "left": 150,
+      "attrs": { "min": "0", "max": "4095", "value": "1024" }
+    },
+    { "type": "wokwi-wokwi-wifi", "id": "wifi", "top": -120, "left": 0, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:GND.1", "pot1:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "pot1:VCC", "red", [ "v0" ] ],
+    [ "esp:VP", "pot1:SIG", "green", [ "v0" ] ]
+  ],
+  "surroundings": {}
+}
