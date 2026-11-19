@@ -10,14 +10,14 @@
 // Configuration Parameters
 const char* WIFI_SSID       = "Wokwi-GUEST";
 const char* WIFI_PASSWORD   = "";
-const char* MQTT_BROKER = "broker.hivemq.com";
+const char* MQTT_BROKER     = "broker.hivemq.com";
 const int   MQTT_PORT       = 1883;
-const char* MQTT_CLIENT_ID  = "StockSense_ESP32_Node_01";
-const char* MQTT_TOPIC = "stocksense/kavindu/telemetry";
+const char* DEVICE_ID       = "StockSense_ESP32_Node_01";
+const char* MQTT_TOPIC      = "stocksense/kavindu_2026_node01/telemetry";
 
 const int LOAD_CELL_PIN     = 34;
-const float EMA_ALPHA       = 0.2;
-const unsigned long PUB_INT = 3000;
+const float EMA_ALPHA       = 0.5;    // Smooths noise while settling in 2-3 packets
+const unsigned long PUB_INT = 1500;   // Publishes every ~4 real-world seconds in Wokwi
 
 WiFiClient espClient;
 PubSubClient mqttClient(espClient);
@@ -76,9 +76,13 @@ void flushOfflineQueue() {
 void connectMQTT() {
     Serial.print("[MQTT] Connecting to Broker: ");
     Serial.println(MQTT_BROKER);
+
+    // Unique client ID prevents collisions on public broker.hivemq.com
+    String uniqueClientId = String(DEVICE_ID) + "_" + String(random(1000, 9999));
     
-    if (mqttClient.connect(MQTT_CLIENT_ID)) {
-        Serial.println("[MQTT] Connected Successfully!");
+    if (mqttClient.connect(uniqueClientId.c_str())) {
+        Serial.print("[MQTT] Connected Successfully as ");
+        Serial.println(uniqueClientId);
         flushOfflineQueue();
     } else {
         Serial.print("[MQTT] Reconnect Failed, rc=");
@@ -113,7 +117,7 @@ void publishTelemetry() {
     rfid_index = (rfid_index + 1) % 4;
 
     StaticJsonDocument<256> doc;
-    doc["device_id"]       = MQTT_CLIENT_ID;
+    doc["device_id"]       = DEVICE_ID;
     doc["timestamp_ms"]    = millis();
     doc["raw_weight_g"]    = round(raw_weight * 100.0) / 100.0;
     doc["filtered_wt_g"]   = round(filtered_weight * 100.0) / 100.0;
@@ -138,6 +142,7 @@ void publishTelemetry() {
 void setup() {
     Serial.begin(115200);
     delay(1000);
+    randomSeed(analogRead(0));
     Serial.println("\n--- STOCKSENSE ESP32 TELEMETRY NODE INIT ---");
 
     pinMode(LOAD_CELL_PIN, INPUT);

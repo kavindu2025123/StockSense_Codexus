@@ -14,9 +14,9 @@
     { "type": "wokwi-wokwi-wifi", "id": "wifi", "top": -120, "left": 0, "attrs": {} }
   ],
   "connections": [
-    [ "esp:GND.1", "pot1:GND", "black", [ "v0" ] ],
-    [ "esp:3V3", "pot1:VCC", "red", [ "v0" ] ],
-    [ "esp:VP", "pot1:SIG", "green", [ "v0" ] ]
+    [ "pot1:GND", "esp:GND.2", "black", [ "v22.7", "h-227", "v182.4" ] ],
+    [ "esp:D34", "pot1:SIG", "green", [ "h-24.2", "v-62.7", "h211.2" ] ],
+    [ "esp:3V3", "pot1:VCC", "red", [ "v-4.9", "h109.9" ] ]
   ],
-  "surroundings": {}
+  "dependencies": {}
 }
