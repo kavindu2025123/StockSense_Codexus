@@ -1,0 +1,218 @@
+{
+  "model_metadata": {
+    "forecasting_algorithm": "Holt Linear Exponential Smoothing (statsmodels)",
+    "anomaly_algorithm": "Isolation Forest (scikit-learn)",
+    "training_window_days": 30
+  },
+  "forecasts": [
+    {
+      "device_id": "BIN-01",
+      "sku": "Amoxicillin 500mg Blister Boxes",
+      "current_weight_g": 2842.3,
+      "current_units": 63,
+      "reorder_point_g": 1200,
+      "predicted_daily_burn_g": 838.5,
+      "predicted_daily_units": 18.6,
+      "days_to_reorder": 2.0,
+      "days_to_stockout": 3.4,
+      "predicted_stockout_date": "2026-11-22",
+      "next_7d_forecast_g": [
+        818.1,
+        824.9,
+        831.7,
+        838.5,
+        845.3,
+        852.0,
+        858.8
+      ]
+    },
+    {
+      "device_id": "BIN-02",
+      "sku": "Heavy-Duty Brass Zippers (Spools)",
+      "current_weight_g": 4165.7,
+      "current_units": 17,
+      "reorder_point_g": 3500,
+      "predicted_daily_burn_g": 2222.7,
+      "predicted_daily_units": 8.9,
+      "days_to_reorder": 0.3,
+      "days_to_stockout": 1.9,
+      "predicted_stockout_date": "2026-11-20",
+      "next_7d_forecast_g": [
+        2228.5,
+        2226.6,
+        2224.6,
+        2222.7,
+        2220.7,
+        2218.8,
+        2216.8
+      ]
+    },
+    {
+      "device_id": "BIN-03",
+      "sku": "Ceylon Organic Tea Packs (200g)",
+      "current_weight_g": 5115.8,
+      "current_units": 26,
+      "reorder_point_g": 2000,
+      "predicted_daily_burn_g": 3307.9,
+      "predicted_daily_units": 16.5,
+      "days_to_reorder": 0.9,
+      "days_to_stockout": 1.5,
+      "predicted_stockout_date": "2026-11-20",
+      "next_7d_forecast_g": [
+        3313.3,
+        3311.5,
+        3309.7,
+        3307.9,
+        3306.0,
+        3304.2,
+        3302.4
+      ]
+    }
+  ],
+  "anomalies": [
+    {
+      "timestamp": "2026-10-21 13:00",
+      "device_id": "BIN-01",
+      "delta_weight_g": -225.0,
+      "units_missing": 5,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-10-26 17:00",
+      "device_id": "BIN-01",
+      "delta_weight_g": -180.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-10-26 19:00",
+      "device_id": "BIN-01",
+      "delta_weight_g": -225.0,
+      "units_missing": 5,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-03 08:00",
+      "device_id": "BIN-01",
+      "delta_weight_g": -270.0,
+      "units_missing": 6,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-06 01:00",
+      "device_id": "BIN-01",
+      "delta_weight_g": -675.0,
+      "units_missing": 15,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-08 16:00",
+      "device_id": "BIN-01",
+      "delta_weight_g": -180.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-10-21 11:00",
+      "device_id": "BIN-02",
+      "delta_weight_g": -1000.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-10-26 20:00",
+      "device_id": "BIN-02",
+      "delta_weight_g": -750.0,
+      "units_missing": 3,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-09 20:00",
+      "device_id": "BIN-02",
+      "delta_weight_g": -1000.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-11 09:00",
+      "device_id": "BIN-02",
+      "delta_weight_g": -1000.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-12 02:00",
+      "device_id": "BIN-02",
+      "delta_weight_g": -1500.0,
+      "units_missing": 6,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-16 11:00",
+      "device_id": "BIN-02",
+      "delta_weight_g": -1000.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-10-24 09:00",
+      "device_id": "BIN-03",
+      "delta_weight_g": -800.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-03 20:00",
+      "device_id": "BIN-03",
+      "delta_weight_g": -1000.0,
+      "units_missing": 5,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-07 09:00",
+      "device_id": "BIN-03",
+      "delta_weight_g": -800.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-12 19:00",
+      "device_id": "BIN-03",
+      "delta_weight_g": -1000.0,
+      "units_missing": 5,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-16 01:00",
+      "device_id": "BIN-03",
+      "delta_weight_g": -1600.0,
+      "units_missing": 8,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    },
+    {
+      "timestamp": "2026-11-16 09:00",
+      "device_id": "BIN-03",
+      "delta_weight_g": -800.0,
+      "units_missing": 4,
+      "severity": "CRITICAL",
+      "reason": "Sudden unscheduled weight drop (IsolationForest outlier)"
+    }
+  ]
+}
